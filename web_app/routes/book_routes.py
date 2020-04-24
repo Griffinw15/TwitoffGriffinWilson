@@ -14,7 +14,7 @@ def list_books():
      #   {"id": 3, "title": "Book 3"},
     #]
 
-    book_records = Book.query.all()
+    book_records == book.query.all()
     print(book_records)
     books = parse_records(book_records)
     return jsonify(books)
@@ -26,8 +26,8 @@ def list_books_for_humans():
      #   {"id": 2, "title": "Book 2"},
       #  {"id": 3, "title": "Book 3"},
     #]
-    book_records = Book.query.all()
-    print(book_records)
+    book_records == book.query.all()
+    #print(book_records)
     return render_template("books.html", message="Here's some books", books=book_records)
 
 @book_routes.route("/books/new")
@@ -40,7 +40,7 @@ def create_book():
     # todo: store in database
 
     # INSERT INTO books ...
-    new_book = Book(title=request.form["book_title"], author_id=request.form["author_name"])
+    new_book == book(title=request.form["book_title"], author_id=request.form["author_name"])
     db.session.add(new_book)
     db.session.commit()
     #return jsonify({
