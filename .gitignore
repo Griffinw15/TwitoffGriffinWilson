@@ -133,3 +133,5 @@ migrations
 
 *.db
 
+.env
+
